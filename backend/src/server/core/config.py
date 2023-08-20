@@ -1,10 +1,31 @@
-"""Config  file for FastAPI server."""
+"""config  file for FastAPI server."""
 
-from decouple import Config
+from decouple import config
+import os
 
-MONGO_USER = Config("MONGO_USER", default=None)
-MONGO_PASS = Config("MONGO_PASS", default=None)
-MONGO_URI = Config("MONGO_URI", default=None)
-PORT = Config("FASTAPI_PORT", default=4000)
-HOST = Config("FASTAPI_HOST", default="0.0.0.0")
-DEBUG = Config("DEBUG", default=False, cast=bool)
+MONGO_USER = config(
+    "MONGO_USER",
+    default=None,
+)
+MONGO_PASS = config(
+    "MONGO_PASS",
+    default=None,
+)
+MONGO_URI = config(
+    "MONGO_URI",
+    default=None,
+)
+PORT = config(
+    "FASTAPI_PORT",
+    default=4000,
+    cast=int,
+)
+HOST = config(
+    "FASTAPI_HOST",
+    default="0.0.0.0",
+)
+DEBUG = config(
+    "DEBUG",
+    default=False,
+    cast=bool,
+)
