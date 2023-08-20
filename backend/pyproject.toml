@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "ispy"
+name = "ispy-backend"
 version = "0.1.0"
-description = ""
+description = "FastAPI-backend for iSpy"
 authors = ["Tony Kabilan Okeke <tonykabilanokeke@gmail.com>"]
 readme = "README.md"
 
@@ -17,6 +17,9 @@ black = "^23.7.0"
 pytest = "^7.4.0"
 pre-commit = "^3.3.3"
 jupyter = "^1.0.0"
+
+[tool.poetry.scripts]
+ispy-server = "src.main:run"
 
 [build-system]
 requires = ["poetry-core"]
