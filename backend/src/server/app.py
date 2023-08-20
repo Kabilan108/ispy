@@ -1,9 +1,10 @@
 """FastAPI application instance."""
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from server.core import config
+from server.schema.base import Response
 
 # from .routes.route import router as RouteRouter
 
@@ -22,6 +23,11 @@ app.add_middleware(
 # app.include_router(ROUTER, tags=[""] prefix="")
 
 
-@app.get("/", tags=["Root"])
-async def root() -> dict:
-    return {"message": "yooo"}
+@app.get("/", tags=["Root"], response_model=Response)
+async def read_root() -> dict:
+    return {"success": True, "data": {"message": "yooo"}}
+
+
+@app.get("/error", response_class=Response)
+def trigger_error():
+    raise HTTPException(status_code=400, detail="This is a bad request!")
