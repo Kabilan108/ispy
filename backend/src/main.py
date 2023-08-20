@@ -1,5 +1,15 @@
 import uvicorn
-from src.server.core import config
+from server.core import config
+
+
+def run():
+    uvicorn.run(
+        "server.app:app",
+        host=config.HOST,
+        port=config.PORT,
+        reload=config.DEBUG,
+    )
+
 
 if __name__ == "__main__":
-    uvicorn.run("server.app:app", host="0.0.0.0", port=config.PORT, reload=True)
+    run()
