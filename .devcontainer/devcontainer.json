@@ -24,14 +24,17 @@
 		},
 		"ghcr.io/devcontainers/features/sshd:1": {
 			"version": "latest"
+		},
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+		"ghcr.io/devcontainers-community/features/direnv:1": {
+			"version": "latest"
 		}
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8000,
-		9000
+		3000, 4000
 	]
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
