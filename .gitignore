@@ -28,6 +28,7 @@ coverage
 # dotenv environment variable files
 .env
 .env.test
+.envrc
 
 # Next.js
 .next
