@@ -45,6 +45,7 @@ __pycache__/
 db.sqlite3
 *.db
 *.sqlite
+.venv/
 
 # IDEs and Editors
 *.iml
