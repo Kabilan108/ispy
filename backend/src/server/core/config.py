@@ -21,3 +21,5 @@ METHODS = config(
 HEADERS = config(
     "HEADERS", default="*", cast=lambda v: [s.strip() for s in v.split(",")]
 )
+
+OPENAI_API_KEY = config("OPENAI_API_KEY", default=None)
