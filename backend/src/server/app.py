@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from server.core import config
 from server.schema.base import Response
+from server.services import openai
 
 # from .routes.route import router as RouteRouter
 
@@ -31,3 +32,9 @@ async def read_root() -> dict:
 @app.get("/error", response_class=Response)
 def trigger_error():
     raise HTTPException(status_code=400, detail="This is a bad request!")
+
+
+@app.get("/kaboom", response_class=Response)
+def trigger_kaboom():
+    joke = openai.random_joke()
+    return {"success": True, "data": {"joke": joke.choices[0].message.content}}
