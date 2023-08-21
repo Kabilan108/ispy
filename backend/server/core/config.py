@@ -5,9 +5,8 @@ import os
 
 MONGO_USER = config("MONGO_USER", default=None)
 MONGO_PASS = config("MONGO_PASS", default=None)
-MONGO_URI = config("MONGO_URI", default=None).format(
-    user=config.MONGO_USER, pwd=config.MONGO_PASS
-)
+MONGO_URI = config("MONGO_URI", default=None).format(user=MONGO_USER, pwd=MONGO_PASS)
+MONGO_DB = config("MONGO_DB", default="ispy")
 
 PORT = config("FASTAPI_PORT", default=4000, cast=int)
 HOST = config("FASTAPI_HOST", default="0.0.0.0")

@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from server.core import config
 from server.schema.base import Response
+
 from server.services import openai
 
 # from .routes.route import router as RouteRouter
