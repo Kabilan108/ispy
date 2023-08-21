@@ -12,14 +12,16 @@ uvicorn = "^0.23.2"
 fastapi = "^0.101.1"
 python-decouple = "^3.8"
 openai = "^0.27.8"
-asyncio = "^3.4.3"
 motor = "^3.2.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
 pytest = "^7.4.0"
+pytest-black = "^0.3.12"
 pre-commit = "^3.3.3"
 jupyter = "^1.0.0"
+pytest-asyncio = "^0.21.1"
+mongomock = "^4.1.2"
 
 [tool.poetry.scripts]
 ispy-server = "src.main:run"
