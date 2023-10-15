@@ -1,10 +1,10 @@
 import uvicorn
-from server.core import config
+from app.core import config
 
 
 def run():
     uvicorn.run(
-        "server.app:app",
+        "app.main:app",
         host=config.HOST,
         port=config.PORT,
         reload=config.DEBUG,
